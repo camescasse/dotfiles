@@ -502,7 +502,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        ts_ls = {},
+        tsserver = {},
         cssls = {},
         docker_compose_language_service = {},
         dockerls = {},
