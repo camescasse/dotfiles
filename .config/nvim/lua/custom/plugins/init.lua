@@ -112,12 +112,27 @@ return {
   },
   {
     'michaelrommel/nvim-silicon',
-    lazy = true,
+    dependencies = { 'folke/which-key.nvim' },
     cmd = 'Silicon',
+    keys = {
+      {
+        '<leader>cs',
+        function()
+          require('nvim-silicon').clip()
+        end,
+        mode = 'v',
+        desc = 'Code screenshot to clipboard',
+      },
+    },
     config = function()
       require('silicon').setup {
         font = 'JetBrainsMono Nerd Font=34',
       }
     end,
+  },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
   },
 }

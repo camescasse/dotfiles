@@ -72,8 +72,6 @@ vim.keymap.set('n', '<leader>ct', ':split | resize -12 | terminal<CR>', { desc =
 -- Toggle nvim-tree
 vim.keymap.set('n', '<leader>t', '<cmd> NvimTreeToggle <cr>', { desc = 'Open/Close tree' })
 
--- Keybind for Silicon code snapshot
-vim.keymap.set('v', '<leader>cs', '<cmd> Silicon <cr>', { desc = 'Code snapshot' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -502,7 +500,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        -- tsserver = {},
         cssls = {},
         docker_compose_language_service = {},
         dockerls = {},
