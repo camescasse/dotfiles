@@ -23,7 +23,6 @@ return {
     end,
   },
   { 'tpope/vim-fugitive' },
-  { 'sharkdp/fd' },
   { 'frabjous/knap' },
   {
     'ahmedkhalf/project.nvim',
