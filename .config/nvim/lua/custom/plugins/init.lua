@@ -23,7 +23,6 @@ return {
     end,
   },
   { 'tpope/vim-fugitive' },
-  { 'frabjous/knap' },
   {
     'ahmedkhalf/project.nvim',
     config = function()
@@ -127,6 +126,20 @@ return {
     config = function()
       require('silicon').setup {
         font = 'JetBrainsMono Nerd Font=34',
+      }
+    end,
+  },
+  {
+    'barrett-ruth/live-server.nvim',
+    cmd = { 'LiveServerStart', 'LiveServerStop' },
+    keys = {
+      { '<F9>', '<cmd> LiveServerStart <cr>', mode = 'n', desc = 'Start Live Server' },
+      { '<F10>', '<cmd> LiveServerStop <cr>', mode = 'n', desc = 'Stop Live Server' },
+      { '<F11>', '<cmd> LiveServerToggle <cr>', mode = 'n', desc = 'Toggle Live Server' },
+    },
+    config = function()
+      require('live-server').setup {
+        args = { '--browser=google-chrome-stable' },
       }
     end,
   },

@@ -75,17 +75,6 @@ vim.keymap.set('n', '<leader>t', '<cmd> NvimTreeToggle <cr>', { desc = 'Open/Clo
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
--- Set knap live preview keybinds
-vim.keymap.set({ 'n', 'v', 'i' }, '<F9>', function()
-  require('knap').process_once()
-end)
-vim.keymap.set({ 'n', 'v', 'i' }, '<F10>', function()
-  require('knap').close_viewer()
-end)
-vim.keymap.set({ 'n', 'v', 'i' }, '<F11>', function()
-  require('knap').toggle_autopreviewing()
-end)
-
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
