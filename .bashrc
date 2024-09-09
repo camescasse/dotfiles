@@ -21,6 +21,8 @@ esac
 # dotfiles alias for git repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias n='nvim'
+
 # run starship customization on startup
 eval "$(starship init bash)"
 
