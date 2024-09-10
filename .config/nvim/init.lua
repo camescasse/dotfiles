@@ -32,7 +32,6 @@ vim.opt.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
@@ -67,10 +66,7 @@ vim.keymap.set('n', '<leader><', '<C-w><', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<leader>>', '<C-w>>', { desc = 'Increase window width' })
 
 -- Open split terminal window
-vim.keymap.set('n', '<leader>ct', ':split | resize -12 | terminal<CR>', { desc = 'Open split(bottom) terminal window' })
-
--- Toggle nvim-tree
-vim.keymap.set('n', '<leader>t', '<cmd> NvimTreeToggle <cr>', { desc = 'Open/Close tree' })
+vim.keymap.set('n', '<leader>ct', ':split | resize -12 | terminal<CR> i', { desc = 'Open split(bottom) terminal window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -810,7 +806,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

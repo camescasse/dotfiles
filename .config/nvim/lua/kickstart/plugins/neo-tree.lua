@@ -10,16 +10,26 @@ return {
     'MunifTanjim/nui.nvim',
   },
   cmd = 'Neotree',
+  lazy = false,
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
+  config = function()
+    require('neo-tree').setup {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          never_show = { '.git' },
+        },
+        window = {
+          mappings = {
+            ['\\'] = 'close_window',
+          },
+          position = 'right',
+          width = 35,
         },
       },
-    },
-  },
+    }
+  end,
 }

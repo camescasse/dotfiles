@@ -1,27 +1,27 @@
 -- You can add your own plugins here or in other files in this directory!
 -- See the kickstart.nvim README for more information
 return {
-  {
-    'nvim-tree/nvim-tree.lua',
-    version = '*',
-    lazy = false,
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function()
-      require('nvim-tree').setup {
-        view = {
-          side = 'right',
-        },
-        tab = {
-          sync = {
-            open = true,
-            close = true,
-          },
-        },
-      }
-    end,
-  },
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   version = '*',
+  --   lazy = false,
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons',
+  --   },
+  --   config = function()
+  --     require('nvim-tree').setup {
+  --       view = {
+  --         side = 'right',
+  --       },
+  --       tab = {
+  --         sync = {
+  --           open = true,
+  --           close = true,
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
   { 'tpope/vim-fugitive' },
   {
     'ahmedkhalf/project.nvim',
@@ -55,9 +55,9 @@ return {
       dashboard.button("n", " " .. " New file",        [[<cmd> ene <BAR> startinsert <cr>]]),
       dashboard.button("r", " " .. " Recent files",    '<cmd> Telescope oldfiles <cr>'),
       dashboard.button("d", " " .. " Recent projects", '<cmd> Telescope projects <cr>'),
-      dashboard.button('p', ' ' .. ' All projects',    '<cmd> e ~/projects <cr>'),
+      dashboard.button('p', ' ' .. ' All projects',    '<cmd> Neotree ~/projects <cr>'),
       dashboard.button("g", " " .. " Find text",       '<cmd> Telescope live_grep <cr>'),
-      dashboard.button("c", " " .. " Config",          '<cmd> e ~/.config/nvim <cr>'),
+      dashboard.button("c", " " .. " Config",          '<cmd> Neotree ~/.config/nvim <cr>'),
       dashboard.button("l", "󰒲 " .. " Lazy",            '<cmd> Lazy <cr>'),
       dashboard.button("q", " " .. " Quit",            '<cmd> qa <cr>'),
     }
