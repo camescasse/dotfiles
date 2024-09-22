@@ -1,27 +1,6 @@
 -- You can add your own plugins here or in other files in this directory!
 -- See the kickstart.nvim README for more information
 return {
-  -- {
-  --   'nvim-tree/nvim-tree.lua',
-  --   version = '*',
-  --   lazy = false,
-  --   dependencies = {
-  --     'nvim-tree/nvim-web-devicons',
-  --   },
-  --   config = function()
-  --     require('nvim-tree').setup {
-  --       view = {
-  --         side = 'right',
-  --       },
-  --       tab = {
-  --         sync = {
-  --           open = true,
-  --           close = true,
-  --         },
-  --       },
-  --     }
-  --   end,
-  -- },
   { 'tpope/vim-fugitive' },
   {
     'ahmedkhalf/project.nvim',
@@ -105,6 +84,7 @@ return {
     config = function()
       require('catppuccin').setup {
         flavour = 'mocha',
+        transparent_background = true,
       }
       vim.cmd.colorscheme 'catppuccin'
     end,
