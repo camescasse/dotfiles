@@ -77,16 +77,25 @@ return {
       })
     end,
   },
+  -- {
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   priority = 1000,
+  --   config = function()
+  --     require('catppuccin').setup {
+  --       flavour = 'mocha',
+  --       transparent_background = true,
+  --     }
+  --     vim.cmd.colorscheme 'catppuccin'
+  --   end,
+  -- },
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'rose-pine/neovim',
+    name = 'rose-pine',
     priority = 1000,
     config = function()
-      require('catppuccin').setup {
-        flavour = 'mocha',
-        transparent_background = true,
-      }
-      vim.cmd.colorscheme 'catppuccin'
+      require('rose-pine').setup {}
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
   {
