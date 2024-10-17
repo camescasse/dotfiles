@@ -10,6 +10,9 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 source /usr/share/nvm/init-nvm.sh
 
+# go programs
+export PATH=$PATH:$HOME/go/bin
+
 # pnpm
 export PNPM_HOME="/home/camescasse/.local/share/pnpm"
 case ":$PATH:" in
