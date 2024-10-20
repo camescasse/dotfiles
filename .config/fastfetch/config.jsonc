@@ -1,8 +1,8 @@
 {
 	"logo": {
 		"type": "kitty-direct",
-		"source": "~/.config/fastfetch/arch-red-blue-gradient.png",
-		"width": 45,
+		"source": "~/.config/fastfetch/bill_cipher.png",
+		"width": 30,
 		"padding": {
 			"top": 1
 		}
