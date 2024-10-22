@@ -336,9 +336,6 @@ require('lazy').setup({
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
-
-      -- Java LSP
-      'nvim-java/nvim-java',
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -539,14 +536,6 @@ require('lazy').setup({
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
-          end,
-          jdtls = function()
-            require('java').setup {
-              -- Custom jdtls settings here
-            }
-            require('lspconfig').jdtls.setup {
-              -- Custom nvim-java config here
-            }
           end,
         },
       }
@@ -784,7 +773,6 @@ require('lazy').setup({
         'go',
         'json',
         'dockerfile',
-        'java',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
