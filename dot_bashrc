@@ -1,0 +1,36 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+source /usr/share/nvm/init-nvm.sh
+
+# go programs
+export PATH=$PATH:$HOME/go/bin
+
+# nvim as default editor
+export $EDITOR=nvim
+
+# pnpm
+export PNPM_HOME="/home/camescasse/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# run starship customization on startup
+eval "$(starship init bash)"
+
+# launch fastfetch on terminal start
+fastfetch
+
+# API key for avante.nvim plugin
+export ANTHROPIC_API_KEY=$(cat ~/.private/ANTHROPIC_API_KEY.txt)
+
+alias n='nvim'
