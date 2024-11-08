@@ -31,6 +31,10 @@ eval "$(starship init bash)"
 fastfetch
 
 # API key for avante.nvim plugin
+# Must create the directory and paste the API key from Anthropic Console to the file
+# Not tracked in git/chezmoi
 export ANTHROPIC_API_KEY=$(cat ~/.private/ANTHROPIC_API_KEY.txt)
 
-alias n='nvim'
+alias n="nvim"
+alias y="yazi"
+alias unfuck="git reset --soft HEAD~1"
