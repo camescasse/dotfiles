@@ -1,4 +1,5 @@
 dotfiles repository to track config files for the following tools:
+
 - .gitconfig globals
 - .bashrc current shell
 - btop
@@ -9,6 +10,7 @@ dotfiles repository to track config files for the following tools:
 - spicetify
 - yazi
 - starship
+- chezmoi
 
 managed using [chezmoi](https://www.chezmoi.io). to load config on a new machine, install chezmoi and run:
 
