@@ -1,0 +1,91 @@
+{
+	"logo": {
+		"type": "kitty-direct",
+		"source": "~/.config/fastfetch/bill_cipher.png",
+		"width": 30,
+		"padding": {
+			"top": 1
+		}
+	},
+	"display": {
+		"separator": " "
+	},
+	"modules": [
+		"break",
+		{
+			"type": "host",
+			"key": "╭─󰇅 ",
+			"keyColor": "green"
+		},
+		{
+			"type": "cpu",
+			"key": "├─ ",
+			"format": "{1}",
+			"keyColor": "green"
+		},
+		{
+			"type": "gpu",
+			"key": "├─ ",
+			"format": "{2}",
+			"keyColor": "green"
+		},
+		{
+			"type": "memory",
+			"key": "├─ ",
+			"keyColor": "green",
+			"format": "{2}"
+		},
+		{
+			"type": "disk",
+			"key": "├─ ",
+			"keyColor": "green"
+		},
+		{
+			"type": "display",
+			"key": "╰─󰍹 ",
+			"keyColor": "green",
+			"compactType": "original"
+		},
+		"break",
+		{
+			"type": "shell",
+			"key": "╭─ ",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "terminal",
+			"key": "├─ ",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "de",
+			"key": "├─ ",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "wm",
+			"key": "╰─ ",
+			"keyColor": "yellow"
+		},
+		"break",
+		{
+			"type": "title",
+			"key": "╭─ ",
+			"format": "{1}@{2}",
+			"keyColor": "blue"
+		},
+		{
+			"type": "os",
+			"key": "├─ ",
+			"keyColor": "blue"
+		},
+		{
+			"type": "kernel",
+			"key": "╰─ ",
+			"format": "{1} {2}",
+			"keyColor": "blue"
+		},
+		"break",
+		"colors"
+	]
+}
