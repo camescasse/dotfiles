@@ -1,11 +1,6 @@
 -- You can add your own plugins here or in other files in this directory!
 -- See the kickstart.nvim README for more information
 return {
-  {
-    'camescasse/yankd.nvim',
-    opts = {},
-    dependencies = 'folke/which-key.nvim',
-  },
   { 'tpope/vim-fugitive' },
   {
     'ahmedkhalf/project.nvim',
