@@ -1,0 +1,68 @@
+# ~/.zshrc
+
+# enable interactive comments
+setopt interactivecomments
+
+# enable colors and change prompt
+autoload -U colors && colors
+
+# basics
+setopt AUTO_CD
+setopt EXTENDED_GLOB
+setopt NOTIFY
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY # keep between sessions
+setopt EXTENDED_HISTORY # add timestamps
+setopt HIST_IGNORE_ALL_DUPS # don't record duplicates
+
+# do nothing if not running interactively
+[[ $- != *i* ]] && return
+
+# enable completion
+autoload -Uz compinit
+compinit
+
+# tab completion config
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias n="nvim"
+alias y="yazi"
+alias gaa="git add ."
+alias gca="git commit -a"
+alias gp="git push"
+alias gs="git status"
+alias gsw="git switch"
+
+# initialize nvm
+source /usr/share/nvm/init-nvm.sh
+
+# path config
+# go
+export PATH=$PATH:$HOME/go/bin
+
+# default editor
+export EDITOR=nvim
+
+# pnpm
+export PNPM_HOME="/home/camescasse/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# initialize starship
+eval "$(starship init zsh)"
+
+# fastfetch on startup
+fastfetch
+
+# load api key for avante.nvim
+export ANTHROPIC_API_KEY=$(cat ~/.private/ANTHROPIC_API_KEY.txt)
