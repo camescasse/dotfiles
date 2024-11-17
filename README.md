@@ -1,7 +1,7 @@
 dotfiles repository to track config files for the following tools:
 
 - .gitconfig globals
-- .zshrc current shell
+- .bashrc current shell
 - btop
 - desktopbg
 - fastfetch
@@ -14,7 +14,7 @@ dotfiles repository to track config files for the following tools:
 
 managed using [chezmoi](https://www.chezmoi.io). to load config on a new machine, install chezmoi and run:
 
-```zsh
+```bash
 chezmoi init https://github.com/camescasse/dotfiles.git
 
 chezmoi update -v
