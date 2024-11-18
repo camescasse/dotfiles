@@ -31,7 +31,13 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # aliases
-alias ls='ls --color=auto'
+if [[ "$(uname)" == "Darwin" ]]; then
+  # macOS
+  alias ls='ls -G'
+else
+  # linux
+  alias ls='ls --color=auto'
+fi
 alias grep='grep --color=auto'
 alias n="nvim"
 alias y="yazi"
@@ -42,7 +48,11 @@ alias gs="git status"
 alias gsw="git switch"
 
 # initialize nvm
-source /usr/share/nvm/init-nvm.sh
+if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
+  source /usr/share/nvm/init-nvm.sh
+elif [[ -f "$HOME/.nvm/nvm.sh" ]]; then
+  source "$HOME/.nvm/nvm.sh"
+fi
 
 # path config
 # go
@@ -52,7 +62,11 @@ export PATH=$PATH:$HOME/go/bin
 export EDITOR=nvim
 
 # pnpm
-export PNPM_HOME="/home/camescasse/.local/share/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm" # macOS default
+if [[ "$(uname)" != "Darwin" ]]; then
+  export PNPM_HOME="$HOME/.local/share/pnpm" # linux default
+fi
+
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -61,8 +75,12 @@ esac
 # initialize starship
 eval "$(starship init zsh)"
 
-# fastfetch on startup
-fastfetch
+# system information on startup
+if command -v fastfetch &> /dev/null; then
+  fastfetch
+fi
 
 # load api key for avante.nvim
-export ANTHROPIC_API_KEY=$(cat ~/.private/ANTHROPIC_API_KEY.txt)
+if [[ -f ~/.private/ANTHROPIC_API_KEY.txt ]]; then
+  export ANTHROPIC_API_KEY=$(cat ~/.private/ANTHROPIC_API_KEY.txt)
+fi
