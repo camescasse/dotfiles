@@ -75,6 +75,11 @@ esac
 # initialize starship
 eval "$(starship init zsh)"
 
+# initialize homebrew (macOS only)
+if [[ "$(uname)" == "Darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # system information on startup
 if command -v fastfetch &> /dev/null; then
   fastfetch
