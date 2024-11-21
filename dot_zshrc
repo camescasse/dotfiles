@@ -46,6 +46,8 @@ alias gca="git commit -a"
 alias gp="git push"
 alias gs="git status"
 alias gsw="git switch"
+alias gf="git fetch"
+alias gm="git merge"
 
 # initialize nvm
 if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
