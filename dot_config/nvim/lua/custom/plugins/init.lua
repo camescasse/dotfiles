@@ -94,6 +94,7 @@ return {
     config = function()
       require('nvim-silicon').setup {
         font = 'JetBrainsMono Nerd Font=34',
+        theme = 'Dracula',
       }
     end,
   },
