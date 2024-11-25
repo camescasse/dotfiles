@@ -34,9 +34,9 @@ return {
       dashboard.button("n", " " .. " New file",        [[<cmd> ene <BAR> startinsert <cr>]]),
       dashboard.button("r", " " .. " Recent files",    '<cmd> Telescope oldfiles <cr>'),
       dashboard.button("d", " " .. " Recent projects", '<cmd> Telescope projects <cr>'),
-      dashboard.button('p', ' ' .. ' All projects',    '<cmd> Neotree ~/projects <cr>'),
+      dashboard.button('p', ' ' .. ' All projects',    '<cmd> Oil --float ~/projects <cr>'),
       dashboard.button("g", " " .. " Find text",       '<cmd> Telescope live_grep <cr>'),
-      dashboard.button("c", " " .. " Config",          '<cmd> Neotree ~/.config/nvim <cr>'),
+      dashboard.button("c", " " .. " Config",          '<cmd> Oil --float ~/.config/nvim <cr>'),
       dashboard.button("l", "󰒲 " .. " Lazy",            '<cmd> Lazy <cr>'),
       dashboard.button("q", " " .. " Quit",            '<cmd> qa <cr>'),
     }
@@ -179,7 +179,9 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('oil').setup {
-        columns = { 'icon' },
+        columns = {
+          'icon',
+        },
         view_options = {
           show_hidden = true,
         },
@@ -189,10 +191,10 @@ return {
       }
 
       -- open parent directory in current window
-      vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
+      vim.keymap.set('n', '<leader>-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
 
       -- open parent directory in floating window
-      vim.keymap.set('n', '<leader>-', require('oil').toggle_float, { desc = 'Parent directory in floating window' })
+      vim.keymap.set('n', '-', require('oil').toggle_float, { desc = 'Parent directory in floating window' })
     end,
   },
 }
