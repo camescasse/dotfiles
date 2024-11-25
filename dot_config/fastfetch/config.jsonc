@@ -1,10 +1,9 @@
 {
 	"logo": {
-		"type": "kitty-direct",
-		"source": "~/.config/fastfetch/bill_cipher.png",
-		"width": 30,
+		"type": "small",
 		"padding": {
-			"top": 1
+			"top": 1,
+			"left": 2
 		}
 	},
 	"display": {
@@ -30,21 +29,15 @@
 			"keyColor": "green"
 		},
 		{
-			"type": "memory",
-			"key": "├─ ",
-			"keyColor": "green",
-			"format": "{2}"
-		},
-		{
 			"type": "disk",
 			"key": "├─ ",
 			"keyColor": "green"
 		},
 		{
-			"type": "display",
-			"key": "╰─󰍹 ",
+			"type": "memory",
+			"key": "╰─ ",
 			"keyColor": "green",
-			"compactType": "original"
+			"format": "{2}"
 		},
 		"break",
 		{
