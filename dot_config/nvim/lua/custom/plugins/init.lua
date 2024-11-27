@@ -188,6 +188,9 @@ return {
         keymaps = {
           ['<C-h>'] = false,
         },
+        float = {
+          padding = 8,
+        },
       }
 
       -- open parent directory in current window
