@@ -133,6 +133,11 @@ return {
           start_insert = false,
         },
       },
+      mappings = {
+        suggestion = {
+          accept = '<C-y>',
+        },
+      },
     },
     build = 'make',
     dependencies = {
