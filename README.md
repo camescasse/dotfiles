@@ -9,7 +9,6 @@ dotfiles repository to track config files for the following tools:
 - fastfetch
 - kitty
 - neovim
-- spicetify
 - yazi
 - starship
 - chezmoi
