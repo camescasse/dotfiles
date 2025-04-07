@@ -117,9 +117,6 @@ return {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      claude = {
-        model = 'claude-3-7-sonnet-20250219',
-      },
       hints = {
         enabled = false,
       },
