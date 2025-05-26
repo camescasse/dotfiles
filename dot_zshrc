@@ -49,6 +49,7 @@ alias gs="git status"
 alias gsw="git switch"
 alias gf="git fetch"
 alias gm="git merge"
+alias vpn="sudo openvpn --config ~/aximcloud/fisher_ecamescasse_pos.ovpn"
 
 # initialize nvm
 if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
@@ -86,9 +87,4 @@ fi
 # system information on startup
 if command -v fastfetch &> /dev/null; then
   fastfetch
-fi
-
-# load api key for avante.nvim
-if [[ -f ~/.private/ANTHROPIC_API_KEY.txt ]]; then
-  export ANTHROPIC_API_KEY=$(cat ~/.private/ANTHROPIC_API_KEY.txt)
 fi
