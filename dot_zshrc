@@ -42,6 +42,7 @@ alias grep='grep --color=auto'
 alias n="nvim"
 alias y="yazi"
 alias gaa="git add ."
+alias gc="git commit"
 alias gca="git commit -a"
 alias gp="git pull"
 alias gpu="git push -u origin"
