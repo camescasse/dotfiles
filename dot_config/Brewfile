@@ -12,6 +12,7 @@ brew "fzf"
 brew "ripgrep"
 brew "gh"
 brew "silicon"
+brew "sst/tap/opencode"
 
 # GUI apps
 cask "google-chrome"
