@@ -3,12 +3,6 @@
 return {
   { 'tpope/vim-fugitive' },
   {
-    'ahmedkhalf/project.nvim',
-    config = function()
-      require('project_nvim').setup {}
-    end,
-  },
-  {
     'goolord/alpha-nvim',
     event = 'VimEnter',
     enabled = true,
@@ -24,6 +18,7 @@ return {
 	   █████████ ██████████ █████████ █████ █████ ████ █████     
 	 ███████████ ███    ███ █████████ █████ █████ ████ █████    
 	██████  █████████████████████ ████ █████ █████ ████ ██████   
+      
       ]]
 
       dashboard.section.header.val = vim.split(logo, '\n')
@@ -33,7 +28,6 @@ return {
       dashboard.button("f", " " .. " Find file",       '<cmd> Telescope find_files <cr>'),
       dashboard.button("n", " " .. " New file",        [[<cmd> ene <BAR> startinsert <cr>]]),
       dashboard.button("r", " " .. " Recent files",    '<cmd> Telescope oldfiles <cr>'),
-      dashboard.button("d", " " .. " Recent projects", '<cmd> Telescope projects <cr>'),
       dashboard.button('p', ' ' .. ' All projects',    '<cmd> Oil --float ~/projects <cr>'),
       dashboard.button("g", " " .. " Find text",       '<cmd> Telescope live_grep <cr>'),
       dashboard.button("c", " " .. " Config",          '<cmd> Oil --float ~/.config/nvim <cr>'),
