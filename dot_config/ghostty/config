@@ -1,6 +1,6 @@
 font-family=TX-02
 
-theme=Dracula
+theme=Nocturnal Winter
 background-opacity=0.95
 # background-blur-radius=20
 
@@ -9,4 +9,4 @@ mouse-hide-while-typing
 
 window-decoration=false
 window-padding-x=0
-window-padding-y=0
+window-padding-y=1

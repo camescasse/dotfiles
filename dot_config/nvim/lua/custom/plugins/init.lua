@@ -87,7 +87,7 @@ return {
     },
     config = function()
       require('nvim-silicon').setup {
-        theme = 'Dracula',
+        theme = 'Nord',
       }
     end,
   },
@@ -111,7 +111,7 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'dracula-nvim',
+          theme = 'codedark',
         },
       }
     end,
