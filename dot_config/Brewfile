@@ -12,6 +12,7 @@ brew "fzf"
 brew "ripgrep"
 brew "gh"
 brew "silicon"
+brew "openvpn"
 brew "sst/tap/opencode"
 
 # GUI apps
@@ -24,3 +25,4 @@ cask "ghostty"
 cask "bruno"
 cask "raycast"
 cask "alt-tab"
+cask "localsend"
