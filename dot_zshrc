@@ -52,12 +52,8 @@ alias gf="git fetch"
 alias gm="git merge"
 alias vpn="sudo openvpn --config ~/aximcloud/fisher_ecamescasse_pos.ovpn"
 
-# initialize nvm
-if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
-  source /usr/share/nvm/init-nvm.sh
-elif [[ -f "$HOME/.nvm/nvm.sh" ]]; then
-  source "$HOME/.nvm/nvm.sh"
-fi
+# initialize fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # path config
 # go
