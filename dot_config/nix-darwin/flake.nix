@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Use a dash-free alias in outputs to avoid any parsing weirdness.
+    darwin.url = "github:nix-darwin/nix-darwin/master";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
@@ -19,10 +21,10 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
+  outputs = { self, nixpkgs, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }:
     let
       configuration = { pkgs, ... }: {
-        # List packages installed in system profile.
+        # Packages
         environment.systemPackages = [
           pkgs.vim
           pkgs.git
@@ -57,6 +59,7 @@
           pkgs.opencode
         ];
 
+        # nix-homebrew module config — NOTE the semicolon after the block.
         nix-homebrew = {
           enable = true;
           enableRosetta = true;
@@ -69,28 +72,25 @@
         };
 
         # Necessary for using flakes on this system.
-        nix.settings.experimental-features = "nix-command flakes";
+        nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-        # Enable alternative shell support in nix-darwin.
         # programs.fish.enable = true;
 
         # Set Git commit hash for darwin-version.
         system.configurationRevision = self.rev or self.dirtyRev or null;
 
-        # Used for backwards compatibility, please read the changelog before changing.
-        # $ darwin-rebuild changelog
+        # Backwards compatibility.
         system.stateVersion = 6;
 
-        # The platform the configuration will be used on.
+        # Platform
         nixpkgs.hostPlatform = "aarch64-darwin";
 
-        # Quality of life
+        # QoL
         security.pam.services.sudo_local.touchIdAuth = true;
       };
     in {
-      # Build darwin flake using:
       # $ darwin-rebuild build --flake .#amanda
-      darwinConfigurations."amanda" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."amanda" = darwin.lib.darwinSystem {
         modules = [ configuration ];
       };
     }
