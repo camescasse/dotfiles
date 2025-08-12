@@ -50,7 +50,7 @@
           "spotify"
           "zen"
           "whatsapp"
-          "raycast"
+          "sol"
         ];
 
         environment.variables =
