@@ -7,6 +7,7 @@ background-opacity=0.95
 macos-option-as-alt=true
 mouse-hide-while-typing
 
+macos-titlebar-style = hidden
 window-decoration=false
 window-padding-x=0
 window-padding-y=1
