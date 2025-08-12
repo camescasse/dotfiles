@@ -50,7 +50,9 @@
           "spotify"
           "zen"
           "whatsapp"
+          "steam"
           "sol"
+          "libreoffice"
         ];
 
         environment.variables =
@@ -152,7 +154,7 @@
 
         # Services
         services.yabai.enable = true;
-        services.yabai.enableScriptingAddition = true;
+        services.yabai.enableScriptingAddition = true; # requires running "sudo yabai --load-sa" after darwin-rebuild switch
         services.skhd.enable = true;
 
         # Miscellaneous
