@@ -37,7 +37,6 @@
           pkgs.localsend
           pkgs.yabai
           pkgs.skhd
-          pkgs.qFlipper
         ];
 
         homebrew.enable = true;
@@ -54,6 +53,7 @@
           "steam"
           "sol"
           "libreoffice"
+          "qflipper"
         ];
 
         environment.variables =
