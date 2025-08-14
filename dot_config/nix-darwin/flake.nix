@@ -37,6 +37,7 @@
           pkgs.localsend
           pkgs.yabai
           pkgs.skhd
+          pkgs.qFlipper
         ];
 
         homebrew.enable = true;
