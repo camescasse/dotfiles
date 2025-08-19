@@ -1,9 +1,25 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "system",
-  "model": "anthropic/claude-sonnet-4-20250514",
   "autoupdate": false,
   "autoshare": false,
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3-coder:30b": {
+          "name": "qwen3-coder:30b"
+        },
+        "gpt-oss:20b": {
+          "name": "gpt-oss:20b"
+        }
+      }
+    }
+  },
   "keybinds": {
     "leader": "ctrl+x",
     "session_new": "<leader>n",

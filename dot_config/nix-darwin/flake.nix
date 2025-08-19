@@ -10,7 +10,6 @@
   outputs = { self, nixpkgs, darwin, ... }:
     let
       configuration = { pkgs, ... }: {
-        # Packages
         environment.systemPackages = [
           pkgs.git
           pkgs.gh
@@ -33,28 +32,40 @@
           pkgs.pnpm
           pkgs.fnm
           pkgs.go
-          pkgs.opencode
           pkgs.localsend
           pkgs.yabai
           pkgs.skhd
         ];
 
-        homebrew.enable = true;
+        homebrew = {
+          enable = true;
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
+          greedyCasks = true;
+          onActivation.cleanup = "zap";
 
-        homebrew.casks = [
-          "google-chrome"
-          "ghostty"
-          "obs"
-          "bruno"
-          "discord"
-          "spotify"
-          "zen"
-          "whatsapp"
-          "steam"
-          "sol"
-          "libreoffice"
-          "qflipper"
-        ];
+          taps = [ "sst/tap" ];
+
+          brews = [
+            "ollama"
+            "opencode"
+          ];
+
+          casks = [
+            "google-chrome"
+            "ghostty"
+            "obs"
+            "bruno"
+            "discord"
+            "spotify"
+            "zen"
+            "whatsapp"
+            "steam"
+            "sol"
+            "libreoffice"
+            "qflipper"
+          ];
+        };
 
         environment.variables =
           {
