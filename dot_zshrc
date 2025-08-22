@@ -52,8 +52,8 @@ alias gf="git fetch"
 alias gm="git merge"
 
 # start vpn connections
-alias vpn-axim="sudo openvpn --config ~/aximcloud/fisher_ecamescasse_pos.ovpn"
-alias vpn-local="sudo openvpn --config ~/local_openvpn.ovpn"
+alias vpn-ax="sudo openvpn --config ~/.vpn/ax.ovpn"
+alias vpn-local="sudo openvpn --config ~/.vpn/local.ovpn"
 
 # initialize fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
