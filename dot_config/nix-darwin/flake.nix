@@ -21,6 +21,7 @@
           pkgs.tmux
           pkgs.vim
           pkgs.neovim
+          pkgs.obsidian
           pkgs.chezmoi
           pkgs.btop
           pkgs.yazi
