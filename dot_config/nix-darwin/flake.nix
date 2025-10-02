@@ -10,6 +10,7 @@
   outputs = { self, nixpkgs, darwin, ... }:
     let
       configuration = { pkgs, ... }: {
+        nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
           pkgs.git
           pkgs.gh
