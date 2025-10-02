@@ -10,7 +10,6 @@
   outputs = { self, nixpkgs, darwin, ... }:
     let
       configuration = { pkgs, ... }: {
-        nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
           pkgs.git
           pkgs.gh
@@ -22,7 +21,6 @@
           pkgs.tmux
           pkgs.vim
           pkgs.neovim
-          pkgs.obsidian
           pkgs.chezmoi
           pkgs.btop
           pkgs.yazi
@@ -66,6 +64,7 @@
             "sol"
             "libreoffice"
             "qflipper"
+            "obsidian"
           ];
         };
 
@@ -129,6 +128,9 @@
           }
           {
             app = "/Applications/WhatsApp.app/";
+          }
+          {
+            app = "/Applications/Obsidian.app/";
           }
           {
             app = "/Applications/Spotify.app/";
