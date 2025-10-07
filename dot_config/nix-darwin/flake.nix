@@ -166,11 +166,6 @@
         power.sleep.computer = 30;
         power.sleep.display = 15;
 
-        # Services
-        services.yabai.enable = true;
-        services.yabai.enableScriptingAddition = true; # requires running "sudo yabai --load-sa" after darwin-rebuild switch
-        services.skhd.enable = true;
-
         # Miscellaneous
         system.defaults.NSGlobalDomain.NSDisableAutomaticTermination = true;
         system.defaults.NSGlobalDomain.NSNavPanelExpandedStateForSaveMode = true;
