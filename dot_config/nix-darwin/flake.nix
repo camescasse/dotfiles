@@ -33,8 +33,6 @@
           pkgs.fnm
           pkgs.go
           pkgs.localsend
-          pkgs.yabai
-          pkgs.skhd
         ];
 
         homebrew = {
