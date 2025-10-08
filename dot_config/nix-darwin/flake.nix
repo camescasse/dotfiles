@@ -42,7 +42,7 @@
           greedyCasks = true;
           onActivation.cleanup = "zap";
 
-          taps = [ "sst/tap" ];
+          taps = [ "sst/tap" "nikitabobko/tap" ];
 
           brews = [
             "ollama"
@@ -63,6 +63,7 @@
             "libreoffice"
             "qflipper"
             "obsidian"
+            "aerospace"
           ];
         };
 
@@ -117,6 +118,7 @@
         system.defaults.dock.mineffect = "scale";
         system.defaults.dock.show-recents = false;
         system.defaults.dock.tilesize = 48;
+        system.defaults.dock.expose-group-apps = true;
         system.defaults.dock.persistent-apps = [
           {
             app = "/Applications/Ghostty.app/";
