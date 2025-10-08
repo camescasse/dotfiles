@@ -119,6 +119,8 @@
         system.defaults.dock.show-recents = false;
         system.defaults.dock.tilesize = 48;
         system.defaults.dock.expose-group-apps = true;
+        system.defaults.dock.wvous-bl-corner = 1;
+        system.defaults.dock.wvous-br-corner = 1;
         system.defaults.dock.persistent-apps = [
           {
             app = "/Applications/Ghostty.app/";
