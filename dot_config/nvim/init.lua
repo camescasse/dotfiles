@@ -400,6 +400,7 @@ require('lazy').setup({
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       local telescopeConfig = require 'telescope.config'
+      local actions = require 'telescope.actions'
       local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 
       -- I want to search in hidden/dot files.
@@ -415,9 +416,10 @@ require('lazy').setup({
         --
         defaults = {
           vimgrep_arguments = vimgrep_arguments,
-          --   mappings = {
-          --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-          --   },
+          mappings = {
+            i = { ['<C-s>'] = actions.select_vertical, ['<C-v'] = false },
+            n = { ['<C-s>'] = actions.select_vertical, ['<C-v'] = false },
+          },
         },
         pickers = {
           find_files = {
