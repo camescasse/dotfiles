@@ -10,21 +10,20 @@ after a base install with `base base-devel linux linux-firmware linux-headers`
 
 ```sh
 pacman -S --needed \
-  amd-ucode efibootmgr dkms nvidia reflector zram-generator smartmontools \
+  amd-ucode efibootmgr dkms nvidia-open-dkms reflector zram-generator smartmontools \
   zsh less man-db nano wget tree unrar unzip 7zip \
   networkmanager network-manager-applet iwd wireless_tools bluez-utils openvpn \
   pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire \
-  wireplumber libpulse v4l2loopback-dkms v4l2loopback-utils \
-  hyprland hyprpaper hyprpolkitagent sddm waybar wofi mako \
-  xdg-desktop-portal-hyprland xdg-utils xorg-xinit \
-  qt5-wayland qt6-multimedia-ffmpeg qt6-virtualkeyboard wl-clipboard swappy \
+  wireplumber libpulse \
+  hyprland hyprpaper sddm waybar wofi mako \
+  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-utils xorg-xinit \
+  qt5-wayland qt6-multimedia wl-clipboard swappy \
   git github-cli chezmoi neovim vim tmux \
   starship fastfetch btop yazi bat fd fzf ripgrep silicon prettierd \
   fnm pnpm go docker lazydocker \
-  ghostty nautilus mpv inkscape yt-dlp \
+  ghostty nautilus mpv imv inkscape yt-dlp \
   steam discord obs-studio libreoffice-still spotify-launcher \
-  gnome-themes-extra accountsservice ttf-hack noto-fonts-cjk noto-fonts-emoji \
-  jdk17-openjdk java-runtime-common android-tools
+  android-tools
 ```
 
 ### paru (AUR)
@@ -33,8 +32,8 @@ install paru first: https://github.com/Morganamilo/paru
 
 ```sh
 paru -S --needed \
-  zen-browser-bin google-chrome localsend-bin bruno-bin opencode-bin \
-  hyprshot clipse hyprlauncher pwvucontrol blueberry \
+  helium-browser-bin localsend-bin bruno-bin opencode-bin \
+  hyprshot clipse pwvucontrol blueberry \
   networkmanager-dmenu-git qflipper usbimager \
   android-sdk-cmdline-tools-latest android-studio
 ```
@@ -49,6 +48,10 @@ chezmoi apply -v
 ### post-install
 
 ```sh
+# set dark mode (requires xdg-desktop-portal-gtk)
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
 # set zsh as default shell
 chsh -s /usr/bin/zsh
 
