@@ -12,27 +12,28 @@ end
 fish_add_path "$PNPM_HOME"
 
 if status is-interactive
+    bind \cy forward-char
+
     if test (uname) = Darwin
-        alias ls='ls -G'
+        abbr -a ls 'ls -G'
     else
-        alias ls='ls --color=auto'
+        abbr -a ls 'ls --color=auto'
     end
 
-    alias grep='grep --color=auto'
-    alias n='nvim'
-    alias y='yazi'
-    alias gaa='git add .'
-    alias gc='git commit'
-    alias gca='git commit -a'
-    alias gp='git pull'
-    alias gpu='git push -u origin'
-    alias gs='git status'
-    alias gsw='git switch'
-    alias gf='git fetch'
-    alias gm='git merge'
+    abbr -a n 'nvim'
+    abbr -a y 'yazi'
+    abbr -a gaa 'git add .'
+    abbr -a gc 'git commit'
+    abbr -a gca 'git commit -a'
+    abbr -a gp 'git pull'
+    abbr -a gpu 'git push -u origin'
+    abbr -a gs 'git status'
+    abbr -a gsw 'git switch'
+    abbr -a gf 'git fetch'
+    abbr -a gm 'git merge'
 
-    alias vpn-ax='sudo openvpn --config ~/.vpn/ax.ovpn'
-    alias vpn-local='sudo openvpn --config ~/.vpn/local.ovpn'
+    abbr -a vpn-ax 'sudo openvpn --config ~/.vpn/ax.ovpn'
+    abbr -a vpn-local 'sudo openvpn --config ~/.vpn/local.ovpn'
 
     fnm env --use-on-cd --shell fish | source
     starship init fish | source
