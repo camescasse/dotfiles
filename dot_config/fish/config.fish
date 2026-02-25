@@ -41,8 +41,4 @@ if status is-interactive
     if test (uname) = Darwin
         /opt/homebrew/bin/brew shellenv | source
     end
-
-    if command -q fastfetch
-        fastfetch
-    end
 end
