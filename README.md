@@ -11,7 +11,7 @@ after a base install with `base base-devel linux linux-firmware linux-headers`
 ```sh
 pacman -S --needed \
   amd-ucode efibootmgr dkms nvidia-open-dkms reflector zram-generator smartmontools \
-  zsh less man-db nano wget tree unrar unzip 7zip \
+  fish less man-db nano wget tree unrar unzip 7zip \
   networkmanager network-manager-applet iwd wireless_tools bluez-utils openvpn \
   pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire \
   wireplumber libpulse \
@@ -52,8 +52,8 @@ chezmoi apply -v
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
-# set zsh as default shell
-chsh -s /usr/bin/zsh
+# set fish as default shell
+chsh -s /usr/bin/fish
 
 # enable services
 sudo systemctl enable --now sddm NetworkManager bluetooth docker
@@ -68,7 +68,7 @@ sudo systemctl enable --now sddm NetworkManager bluetooth docker
 
 nix-darwin
 
-```zsh
+```sh
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install
 
 sudo scutil --set ComputerName <hostname>
@@ -78,33 +78,37 @@ sudo scutil --set HostName <hostname>
 
 homebrew
 
-```zsh
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 manually create `~/.config/nix-darwin/flake.nix` and copy contents from flake.nix
 in the repo, then run:
 
-```zsh
+```sh
 sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.config/nix-darwin
 ```
 
 chezmoi dotfiles
 
-```zsh
+```sh
 chezmoi init https://github.com/camescasse/dotfiles.git
 chezmoi apply -v
 ```
 
 for updates run:
 
-```zsh
+```sh
 sudo darwin-rebuild switch --flake ~/.config/nix-darwin
 ```
 
 ### post-install
 
-```
+```sh
+# set fish as default shell
+grep -qxF '/run/current-system/sw/bin/fish' /etc/shells || echo '/run/current-system/sw/bin/fish' | sudo tee -a /etc/shells
+chsh -s /run/current-system/sw/bin/fish
+
 tmux  - launch, then Ctrl+A > Shift+I
 nvim  - launch, let Lazy and Mason install deps
 ```
