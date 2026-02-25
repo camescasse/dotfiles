@@ -14,12 +14,6 @@ fish_add_path "$PNPM_HOME"
 if status is-interactive
     bind \cy forward-char
 
-    if test (uname) = Darwin
-        abbr -a ls 'ls -G'
-    else
-        abbr -a ls 'ls --color=auto'
-    end
-
     abbr -a n 'nvim'
     abbr -a y 'yazi'
     abbr -a gaa 'git add .'
