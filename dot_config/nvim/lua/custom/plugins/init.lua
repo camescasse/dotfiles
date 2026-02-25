@@ -128,6 +128,7 @@ return {
           show_hidden = true,
         },
         keymaps = {
+          ['<C-s>'] = { 'actions.select', opts = { vertical = true, close = true } },
           ['<C-h>'] = false,
         },
         float = {
@@ -138,8 +139,8 @@ return {
       -- open parent directory in current window
       vim.keymap.set('n', '<leader>-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
 
-      -- open parent directory in floating window
-      vim.keymap.set('n', '-', require('oil').toggle_float, { desc = 'Parent directory in floating window' })
+      -- open parent directory in current window
+      vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
     end,
   },
 }

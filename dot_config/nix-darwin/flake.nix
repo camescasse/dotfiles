@@ -45,12 +45,11 @@
           taps = [ "sst/tap" "nikitabobko/tap" ];
 
           brews = [
-            "ollama"
             "opencode"
+            "tree-sitter-cli"
           ];
 
           casks = [
-            "google-chrome"
             "ghostty"
             "obs"
             "bruno"
@@ -62,8 +61,8 @@
             "sol"
             "libreoffice"
             "qflipper"
-            "obsidian"
             "aerospace"
+            "helium-browser"
           ];
         };
 
