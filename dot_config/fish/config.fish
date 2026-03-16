@@ -11,6 +11,11 @@ else
 end
 fish_add_path "$PNPM_HOME"
 
+set -gx ANDROID_SDK_ROOT $HOME/Android/Sdk
+fish_add_path $ANDROID_SDK_ROOT/emulator
+fish_add_path $ANDROID_SDK_ROOT/platform-tools
+fish_add_path $HOME/.maestro/bin
+
 if status is-interactive
     bind \cy forward-char
 
@@ -35,4 +40,5 @@ if status is-interactive
     if test (uname) = Darwin
         /opt/homebrew/bin/brew shellenv | source
     end
+
 end

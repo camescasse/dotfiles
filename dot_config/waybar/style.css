@@ -2,7 +2,10 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: CaskaydiaMono Nerd Font;
+  font-family:
+    "TX-02",
+    "Berkeley Mono",
+    CaskaydiaMono Nerd Font;
   font-size: 12px;
 }
 
@@ -12,7 +15,7 @@
 
 #workspaces button {
   all: initial;
-  padding: 2px 6px;
+  padding: 2px 4px;
   margin-right: 3px;
 }
 
