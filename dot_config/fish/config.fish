@@ -32,7 +32,6 @@ if status is-interactive
     abbr -a gm 'git merge'
 
     abbr -a vpn-ax 'sudo openvpn --config ~/.vpn/ax.ovpn'
-    abbr -a vpn-local 'sudo openvpn --config ~/.vpn/local.ovpn'
 
     fnm env --use-on-cd --shell fish | source
     starship init fish | source

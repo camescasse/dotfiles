@@ -25,6 +25,7 @@
           pkgs.btop
           pkgs.yazi
           pkgs.openvpn
+          pkgs.tailscale
           pkgs.silicon
           pkgs.prettierd
           pkgs.docker
@@ -125,13 +126,10 @@
             app = "/Applications/Ghostty.app/";
           }
           {
-            app = "/Applications/Zen.app/";
+            app = "/Applications/Helium.app/";
           }
           {
             app = "/Applications/WhatsApp.app/";
-          }
-          {
-            app = "/Applications/Obsidian.app/";
           }
           {
             app = "/Applications/Spotify.app/";
