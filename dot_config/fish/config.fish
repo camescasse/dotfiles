@@ -12,9 +12,15 @@ end
 fish_add_path "$PNPM_HOME"
 
 set -gx ANDROID_SDK_ROOT $HOME/Android/Sdk
+set -gx ANDROID_HOME $ANDROID_SDK_ROOT
+fish_add_path $ANDROID_SDK_ROOT/cmdline-tools/latest/bin
 fish_add_path $ANDROID_SDK_ROOT/emulator
 fish_add_path $ANDROID_SDK_ROOT/platform-tools
 fish_add_path $HOME/.maestro/bin
+
+function emulator --wraps emulator
+    env QT_QPA_PLATFORM=xcb $ANDROID_SDK_ROOT/emulator/emulator $argv
+end
 
 if status is-interactive
     bind \cy forward-char
